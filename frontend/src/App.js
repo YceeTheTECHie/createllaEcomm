@@ -1,7 +1,8 @@
 import React from 'react';
+import ProductGrid from './Components/ProductGrid';
 const App = () => {
   return (
-  <h2> hello </h2>
+ <ProductGrid />
     );
   } 
 

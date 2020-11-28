@@ -21,3 +21,35 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  const [products, setProducts] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
+    const [limit, setLimit] = useState(15)
+    const [sort, setSort] = useState("size")
+    const [nextPage,setNextPage] = useState(1)
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            
+            const response = await fetch(`http://localhost:5000/products?_limit=${limit}&_page=${nextPage}&_sort=${sort}`);
+            const json = await response.json();
+            setProducts(json);
+            setIsLoading(false);
+            console.log(setProducts);
+
+        }
+    },)
