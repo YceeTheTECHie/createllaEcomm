@@ -7,31 +7,6 @@ body {
   overflow-y: auto;
 }
 
-header,
-footer {
-    font-family: 'Montserrat';
-    margin: 0 auto;
-    padding: 5em 3em;
-    text-align: center;
-    background: #555;
-}
-
-
-header h1 {
-    color: #AAA;
-    font-size: 40px;
-    font-weight: lighter;
-    margin-bottom: 5px;
-}
-
-header span {
-    color: #222;
-}
-
-footer span {
-    color: #AAA;
-}
-
 div.headercontainer {
     font-family: Montserrat;
     margin: 0 auto;
@@ -131,6 +106,42 @@ div.circleBehind a:hover:after {
 }
 .product-info-holder{
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  /* justify-content: flex-start; */
+  /* align-items: center; */
+}
+
+.details-section{
+    display:flex;
+    justify-content: space-around !important;
+}
+span{
+padding-left:1em !important;
+}
+
+
+/* loader styles */
+
+.loader-text{
+font-size:11px;
+color:blue;
+}
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  margin: 11em 0 0 55em ;
+  border-top: 16px solid #3498db;
+  width: 100px;
+  height: 100px;
+  vertical-align:center;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
