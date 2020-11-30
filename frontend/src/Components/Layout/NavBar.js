@@ -1,8 +1,8 @@
 import React from 'react';
-import '../App.css';
+import '../../App.css';
 const Navbar = () => {
     return (
-            <div className="container blue circleBehind">
+            <div className="headercontainer blue circleBehind">
             <h4 className="header-title">ASCII MARKETPLACE</h4>
             <h6>Sort by </h6>
             <a>Id</a>

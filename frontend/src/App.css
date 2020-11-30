@@ -5,6 +5,9 @@ body {
     font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+*{
+    overflow-x:none;
+}
 header,
 footer {
     font-family: 'Montserrat';
@@ -13,6 +16,7 @@ footer {
     text-align: center;
     background: #555;
 }
+
 
 header h1 {
     color: #AAA;
@@ -29,14 +33,14 @@ footer span {
     color: #AAA;
 }
 
-div.container {
+div.headercontainer {
     font-family: Montserrat;
     margin: 0 auto;
     padding: 3em 3em;
     text-align: center;
 }
 
-div.container a {
+div.headercontainer a {
     color: #FFF;
     text-decoration: none;
     font: 12px 'Montserrat';
@@ -86,4 +90,48 @@ div.circleBehind a:hover:after {
 
 .header-title{
     color:whitesmoke;
+}
+
+
+/* //grid */
+
+
+.product-container{
+  margin-top:2em !important;
+  margin-bottom: 10px;
+  height: 200px;
+  background: rgba(0,0,0,.1);
+  border-left: 10px solid whitesmoke;
+  cursor: pointer;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+  /* background: -webkit-linear-gradient(bottom right,rgba(232,181,2,0.1),rgba(53,0,72,0.1)); */
+
+.product-container:hover{
+  background: -webkit-linear-gradient(bottom right,rgba(232,181,2,0.005),rgba(53,0,72,0.005));
+}
+.product-container:hover > .product-info-container{
+  background: -webkit-linear-gradient(bottom right,rgba(232,181,2,0.1),rgba(53,0,72,0.1));
+}
+
+
+.product-info-container{
+.product-container:active > .product-info-container{
+  position: absolute;
+  bottom: 30px;
+  right: 11px;
+  left: 11px;
+  color: #080808;
+  font-size: 16px;
+}
+}
+.product-info-holder{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
