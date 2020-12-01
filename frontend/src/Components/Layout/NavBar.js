@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../App.css';
 const Navbar = ({size,price,id}) => {
     return (
             <div className="headercontainer blue circleBehind">

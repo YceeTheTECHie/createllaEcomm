@@ -1,7 +1,7 @@
 import React from 'react';
 const Loader = ({action}) => (
   (action)? 
-    <div class="loader"><p class="loader-text">Loading...</p></div>
+    <div className="justify-content-center loader"><p className="loader-text">Loading...</p></div>
         : 
         null
 )

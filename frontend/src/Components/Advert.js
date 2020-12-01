@@ -1,5 +1,4 @@
 import React from 'react'
-import '../App.css'
 import Face from './Face'
 import Ads from './Ads'
 

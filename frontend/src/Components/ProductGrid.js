@@ -41,10 +41,6 @@ class ProductGrid extends Component {
         
     }
 
-
-
-
-
 // function to detect scroll position and display the rest of the pducts
   onScroll = () => {
             const onScrollPosition = window.innerHeight + window.scrollY,
@@ -92,18 +88,6 @@ class ProductGrid extends Component {
     window.addEventListener('scroll', this.onScroll, false);
 
   }
-
-    // componentDidMount() {
-    //     this.firstFetch();
-    // windo  w.addEventListener('scroll', this.onScroll, false);
-
-    // }
-   
-
-    componentWillUnmount() {
-      window.removeEventListener('scroll', this.onScroll, false);
-  }
-
     render() {
         return (
             <React.Fragment>

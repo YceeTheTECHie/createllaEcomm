@@ -1,5 +1,5 @@
 export const adIndexController = () => {
-    let UsedIndex = [];
+let UsedIndex=[]
        const newIndex=Math.floor(Math.random()*1000);
         if(UsedIndex.includes(newIndex)){
             return adIndexController()

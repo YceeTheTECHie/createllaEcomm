@@ -6,8 +6,8 @@ import Advert from './Advert'
 import LastResult from './LastResult'
 const ContentGrid = ({ value, action, condition }) =>
     (
-        <div class="body">
-                <div class="row">
+        <div className="body">
+                <div className="row">
                 {value.map((val,i)=>
                         (!(i%20)&&i!==0)?
                         <Advert value={val}

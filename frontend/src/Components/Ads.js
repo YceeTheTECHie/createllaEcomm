@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {adIndexController} from '../Helpers/adIndexController'
-import '../App.css'
 
 class Ads extends Component{
     constructor(props){
