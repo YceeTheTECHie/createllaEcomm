@@ -35,30 +35,6 @@ yarn-error.log*
 
 
 
-  sortByPrice = () => {
-    const {result} = this.state
-    result.sort((a,b)=>a.price-b.price)
-    this.setState((prevState)=>
-      ({ result: [] }))
-    this.firstFetch();
-  }
-
-     sortBySize = () => {
-    const {result} = this.state
-    result.sort((a,b)=>a.size-b.size)
-    this.setState((prevState)=>
-      ({ result: [] }))
-      this.initialCall();
-    }
-
-      sortById(){
-    const {result} = this.state
-
-    result.sort((a,b)=>a.id-b.id)
-
-    this.setState((prevState)=>
-    ({result:[...result]}))
-  }
 
 
 

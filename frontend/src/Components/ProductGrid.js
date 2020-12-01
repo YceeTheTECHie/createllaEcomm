@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import {getResult} from '../Helpers/FetchData'
-import Navigation from './Layout/NavBar';
+import NavBar from './Layout/NavBar';
  import ContentGrid from './ContentGrid'
 class ProductGrid extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            isLoading: false,
+            isLoading: true,
             page: 0,
             products: [],
-            lastResult: false
-        }
+          lastResult: false,
+            
+      }
+      
     }
     //Gets product list initially, before component mounts
      firstFetch = () => {
@@ -43,19 +45,47 @@ class ProductGrid extends Component {
 
 
 
-
+// function to detect scroll position and display the rest of the pducts
   onScroll = () => {
-       
             const onScrollPosition = window.innerHeight + window.scrollY,
-            wholeScreen = document.body.offsetHeight - 500
+            fullScreen = document.body.offsetHeight - 500
 
-           if (onScrollPosition >= wholeScreen) {
-      if(!this.state.lastResult){
-        this.otherFetch()
-      }
-      }
+    if (onScrollPosition >= fullScreen) {
+                
+             (!this.state.lastResult) ?  this.otherFetch() : null
+               
+     }
   }
   
+ sortById = () => {
+    const {products} = this.state
+
+    products.sort((a,b)=>a.id-b.id)
+
+    this.setState((prevState)=>
+    ({products:[...products]}))
+  }
+
+  //sorts the product list by price
+  sortByPrice = () => {
+    const {products} = this.state
+
+    products.sort((a,b)=>a.price-b.price)
+
+    this.setState((prevState)=>
+    ({products:[...products]}))
+  }
+
+  //sorts the product list by size
+ sortBySize = () => {
+    const {products} = this.state
+
+    products.sort((a,b)=>a.size-b.size)
+    
+    this.setState((prevState)=>
+    ({products:[...products]}))
+  }
+
   
   componentDidMount(){
     this.firstFetch()
@@ -65,10 +95,9 @@ class ProductGrid extends Component {
 
     // componentDidMount() {
     //     this.firstFetch();
-    // window.addEventListener('scroll', this.onScroll, false);
+    // windo  w.addEventListener('scroll', this.onScroll, false);
 
     // }
-// function to detect scroll position and display the rest of the pducts
    
 
     componentWillUnmount() {
@@ -78,7 +107,9 @@ class ProductGrid extends Component {
     render() {
         return (
             <React.Fragment>
-                <Navigation />
+                <NavBar size={this.sortBySize}
+                      price={this.sortByPrice}
+                      id={this.sortById} />
                 <ContentGrid value={this.state.products}
                             action ={this.state.isLoading}
                             condition={this.state.lastResult}/>
