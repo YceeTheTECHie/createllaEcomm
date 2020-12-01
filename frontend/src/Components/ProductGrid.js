@@ -47,7 +47,7 @@ class ProductGrid extends Component {
   onScroll = () => {
        
             const onScrollPosition = window.innerHeight + window.scrollY,
-            wholeScreen = document.body.offsetHeight - 400
+            wholeScreen = document.body.offsetHeight - 500
 
            if (onScrollPosition >= wholeScreen) {
       if(!this.state.lastResult){
@@ -72,7 +72,7 @@ class ProductGrid extends Component {
    
 
     componentWillUnmount() {
-    window.removeEventListener('scroll', this.onScroll, false);
+      window.removeEventListener('scroll', this.onScroll, false);
   }
 
     render() {
@@ -82,6 +82,7 @@ class ProductGrid extends Component {
                 <ContentGrid value={this.state.products}
                             action ={this.state.isLoading}
                             condition={this.state.lastResult}/>
+                            
             </React.Fragment>
         );
     }

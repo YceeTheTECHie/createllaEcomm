@@ -3,6 +3,7 @@ import '../App.css'
 import Face from './Face'
 import Loader from './Loader'
 import Advert from './Advert'
+import LastResult from './LastResult'
 const ContentGrid = ({ value, action, condition }) =>
     (
         <div class="body">
@@ -15,7 +16,8 @@ const ContentGrid = ({ value, action, condition }) =>
                         <Face key={i} face= {val.face} price={val.price} date={val.date} size={val.size}/>
                         )}        
                 </div>
-        <Loader action={action}/>
+                        <Loader action={action} />
+                        <LastResult condition = {condition}/>
         </div>
     );
 
