@@ -13,6 +13,7 @@ function getUrlSearchParam(url, s) {
 
 module.exports = (req, res, next) => {
     if (req.url.indexOf('/ads') === -1) {
+        console.log("didnr")
         next();
     }
     else {

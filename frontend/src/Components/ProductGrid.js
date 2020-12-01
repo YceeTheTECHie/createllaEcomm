@@ -40,33 +40,41 @@ class ProductGrid extends Component {
     }
 
 
-    sortByPrice = () => {
-    const {result} = this.state
-    result.sort((a,b)=>a.price-b.price)
-    this.setState((prevState)=>
-      ({ result: [] }))
-    this.firstFetch();
+
+
+
+
+  onScroll = () => {
+       
+            const onScrollPosition = window.innerHeight + window.scrollY,
+            wholeScreen = document.body.offsetHeight - 400
+
+           if (onScrollPosition >= wholeScreen) {
+      if(!this.state.lastResult){
+        this.otherFetch()
+      }
+      }
+  }
+  
+  
+  componentDidMount(){
+    this.firstFetch()
+    window.addEventListener('scroll', this.onScroll, false);
+
   }
 
-     sortBySize = () => {
-    const {result} = this.state
-    result.sort((a,b)=>a.size-b.size)
-    this.setState((prevState)=>
-      ({ result: [] }))
-      this.initialCall();
-    }
+    // componentDidMount() {
+    //     this.firstFetch();
+    // window.addEventListener('scroll', this.onScroll, false);
 
-      sortById(){
-    const {result} = this.state
+    // }
+// function to detect scroll position and display the rest of the pducts
+   
 
-    result.sort((a,b)=>a.id-b.id)
-
-    this.setState((prevState)=>
-    ({result:[...result]}))
+    componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll, false);
   }
-    componentDidMount() {
-        this.firstFetch();
-    }
+
     render() {
         return (
             <React.Fragment>
